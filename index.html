@@ -3,15 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Viewer</title>
+    <title>PDF Viewer with Password Protection</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div id="loginbox" class="lightbox">
+        <div class="box">
+            <input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="Enter password" /> <br />
+            <button id="loginbutton" type="button">Enter</button>
+            <p id="wrongPassword" style="display: none; color: red;">Wrong password</p>
+        </div>
+    </div>
+
+    <div id="pdfContainer">
         <iframe src="YOUR_PDF_LINK_HERE#toolbar=0&navpanes=0&scrollbar=0" allowfullscreen></iframe>
         <div class="overlay">
             <div class="message">Viewing PDF - Downloading is disabled.</div>
         </div>
     </div>
+
+    <script>
+        "use strict";
+
+        function loadPDF() {
+            $("#loginbox").hide();
+            $("#pdfContainer").show();
+        }
+
+        $("#loginbutton").on("click", function() {
+            var password = $("#password").val();
+            var hash = Sha1.hash(password); // Hash the password
+            if (hash === "EXPECTED_HASH_HERE") { // Replace with the expected hash
+                loadPDF();
+            } else {
+                $("#wrongPassword").show();
+                $("#password").val("");
+            }
+        });
+
+        $("#password").keypress(function(e) {
+            if (e.which == 13) {
+                $("#loginbutton").click();
+            }
+        });
+
+        $("#password").focus();
+    </script>
 </body>
 </html>
