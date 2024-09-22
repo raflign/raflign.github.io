@@ -8,7 +8,27 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container {
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.8);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border-radius: 3px;
+    background: rgba(101, 101, 101, 0.7);
+    padding: 12px;
+}
+
+#pdfContainer {
+    display: none; /* Hide PDF container by default */
     position: relative;
     width: 100%;
     height: 100%;
@@ -45,10 +65,13 @@ iframe {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     iframe {
-        width: 95%; /* More width on smaller screens */
-        height: 90%; /* Adjust height as needed */
+        width: 95%;
+        height: 90%;
     }
-    .message {
-        font-size: 18px; /* Smaller font for mobile */
-    }
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #955;
+    text-align: center;
 }
