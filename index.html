@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
+    <script src="script.js"></script> <!-- Link to your external JavaScript file -->
 </head>
 <body>
     <div id="loginbox" class="lightbox">
@@ -23,33 +24,5 @@
             <div class="message">Viewing PDF - Downloading is disabled.</div>
         </div>
     </div>
-
-    <script>
-        "use strict";
-
-        function loadPDF() {
-            $("#loginbox").hide();
-            $("#pdfContainer").show();
-        }
-
-        $("#loginbutton").on("click", function() {
-            var password = $("#password").val();
-            var hash = Sha1.hash(password); // Hash the password
-            if (hash === "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8") { // Hash for 'mypassword'
-                loadPDF();
-            } else {
-                $("#wrongPassword").show();
-                $("#password").val("");
-            }
-        });
-
-        $("#password").keypress(function(e) {
-            if (e.which == 13) {
-                $("#loginbutton").click();
-            }
-        });
-
-        $("#password").focus();
-    </script>
 </body>
 </html>
