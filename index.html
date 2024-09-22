@@ -35,7 +35,7 @@
         $("#loginbutton").on("click", function() {
             var password = $("#password").val();
             var hash = Sha1.hash(password); // Hash the password
-            if (hash === "EXPECTED_HASH_HERE") { // Replace with the expected hash
+            if (hash === "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8") { // Replace with the expected hash
                 loadPDF();
             } else {
                 $("#wrongPassword").show();
