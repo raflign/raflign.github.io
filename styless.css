@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Allows clicks to go through */
+}
+
+.message {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    pointer-events: auto; /* Enables clicks for this element */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    iframe {
+        width: 95%; /* More width on smaller screens */
+        height: 90%; /* Adjust height as needed */
+    }
+    .message {
+        font-size: 18px; /* Smaller font for mobile */
+    }
+}
