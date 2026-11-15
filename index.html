@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M. Rafli Gunawan</title>
+<meta name="description" content="Physicist turned banking operations and automation engineer.">
+<style>
+:root{--bg:#040814;--ink:#e6eeff;--mute:#8fa0c4;--line:#17233f;--acc:#5cc8ff;--acc2:#8b7bff;--glow:rgba(92,200,255,.16);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(70% 50% at 85% 0%,rgba(110,90,255,.22),transparent 60%),radial-gradient(60% 45% at 5% 45%,rgba(40,120,255,.16),transparent 65%),radial-gradient(70% 50% at 70% 100%,rgba(92,200,255,.12),transparent 60%),var(--bg);background-attachment:fixed;color:var(--ink);font:18px/1.65 Georgia,"Times New Roman",serif;overflow-x:hidden}
+.mono{font:500 12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+/* hero */
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-3;pointer-events:none}
+.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;padding:96px 0 56px;border-bottom:1px solid var(--line);isolation:isolate}
+.orbit{position:absolute;right:-10%;top:50%;width:min(88vw,780px);transform:translateY(-52%);z-index:-1;color:var(--acc);opacity:.95;filter:drop-shadow(0 0 14px rgba(92,200,255,.35))}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 80% 40%,var(--glow),transparent 70%);z-index:-2}
+h1{font-weight:400;font-size:clamp(54px,13vw,148px);line-height:.92;letter-spacing:-.035em;margin:22px 0 28px}
+h1 em{font-style:italic;background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(20px,2.6vw,26px);line-height:1.45;max-width:640px;margin:0 0 32px}
+.links{display:flex;gap:22px;flex-wrap:wrap}
+.links a{text-decoration:none;border-bottom:1px solid var(--acc);padding-bottom:2px}
+.links a:hover{color:var(--acc)}
+/* sections */
+section{padding:84px 0 0}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
+.sh i{font:normal 500 12px ui-monospace,Menlo,Consolas,monospace;color:var(--acc);letter-spacing:.1em}
+.sh h2{margin:0;font-weight:400;font-size:clamp(30px,5vw,46px);letter-spacing:-.02em}
+.sh::after{content:"";flex:1;height:1px;background:var(--line)}
+.row{display:grid;grid-template-columns:64px 1fr;gap:0 12px;padding:26px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .3s}
+.row::before{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--acc);transition:width .5s}
+.row:hover::before{width:100%}
+.row:hover h3{transform:translateX(8px);color:var(--acc)}
+.row .n{font:500 13px/2.3 ui-monospace,Menlo,Consolas,monospace;color:var(--mute)}
+.row h3{margin:0 0 4px;font-weight:400;font-size:clamp(22px,3.2vw,30px);line-height:1.25;transition:transform .3s,color .3s}
+.row p{margin:0;color:var(--mute);max-width:640px;font-size:17px}
+/* research plates */
+.plates{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.plate{padding:34px 28px 34px 0;border-bottom:1px solid var(--line)}
+.plate+.plate{padding-left:28px;border-left:1px solid var(--line)}
+.yr{font-size:clamp(60px,9vw,96px);line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px var(--acc);margin-bottom:14px}
+.plate h3{font-weight:400;font-size:24px;line-height:1.25;margin:0 0 8px}
+.tagp{display:inline-block;margin-bottom:10px;padding:3px 9px;border:1px solid var(--acc);border-radius:99px;color:var(--acc)}
+.plate p{margin:0;color:var(--mute);font-size:17px}
+.feat{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;padding:34px 0;border-bottom:1px solid var(--line)}
+.feat h3{font-weight:400;font-size:clamp(30px,4.4vw,44px);line-height:1.15;margin:0;background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.feat p{margin:0 0 20px}
+.feat dl{margin:0;display:grid;grid-template-columns:130px 1fr;gap:12px 16px;border-top:1px solid var(--line);padding-top:18px}
+.feat dt{padding-top:4px;color:var(--acc)}.feat dd{margin:0;color:var(--mute);font-size:17px}
+/* background list */
+.bg{display:grid;grid-template-columns:110px 1fr;gap:10px 18px;padding-top:8px}
+.bg .mono{padding-top:5px}
+.bg div+div{}
+.bg b{font-weight:400}.bg span{color:var(--mute)}
+/* contact */
+footer{padding:110px 0 70px}
+.big{display:block;font-size:clamp(34px,8.2vw,92px);line-height:1;letter-spacing:-.03em;text-decoration:none;margin:18px 0 26px;word-break:break-word}
+.big:hover{color:var(--acc)}
+.big span{display:inline-block;transition:transform .3s}.big:hover span{transform:translate(6px,-6px)}
+@media (max-width:820px){.feat{grid-template-columns:1fr;gap:6px}.feat dl{grid-template-columns:1fr;gap:2px}.feat dd{margin-bottom:12px}.plates{grid-template-columns:1fr}.plate+.plate{padding-left:0;border-left:0}.plate{padding-right:0}}
+@media (max-width:640px){
+ .plates{grid-template-columns:1fr}.plate+.plate{padding-left:0;border-left:0}.plate{padding-right:0}
+ .row{grid-template-columns:34px 1fr}.bg{grid-template-columns:1fr;gap:0}.bg .mono{padding:14px 0 0}
+ .orbit{right:-40%;opacity:.55}
+}
+.js .r{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
+.js .r.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .r{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<header class="hero">
+<svg class="orbit" viewBox="-200 -200 400 400" fill="none" stroke="currentColor" stroke-width=".7" aria-hidden="true">
+ <defs><radialGradient id="nu"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#5cc8ff"/><stop offset="1" stop-color="#5cc8ff" stop-opacity="0"/></radialGradient></defs>
+ <g opacity=".6"><ellipse rx="185" ry="62"/><ellipse rx="185" ry="62" transform="rotate(60)"/><ellipse rx="185" ry="62" transform="rotate(120)"/></g>
+ <circle r="46" fill="url(#nu)" stroke="none"/><circle r="9" fill="#fff" stroke="none"/>
+ <g fill="#9fe0ff" stroke="none">
+  <g><circle r="5"><animateMotion dur="9s" repeatCount="indefinite" path="M185,0 A185,62 0 1,1 -185,0 A185,62 0 1,1 185,0"/></circle></g>
+  <g transform="rotate(60)"><circle r="5"><animateMotion dur="12s" repeatCount="indefinite" path="M185,0 A185,62 0 1,1 -185,0 A185,62 0 1,1 185,0"/></circle></g>
+  <g transform="rotate(120)"><circle r="5"><animateMotion dur="15s" repeatCount="indefinite" path="M185,0 A185,62 0 1,1 -185,0 A185,62 0 1,1 185,0"/></circle></g>
+ </g>
+</svg>
+<div class="wrap">
+ <div class="mono">Banking operations · Automation · Physics</div>
+ <h1>M. Rafli<br><em>Gunawan</em></h1>
+ <p class="lede">I build small tools that take repetitive work off people’s desks, and I chase down why systems misbehave. Physics taught me not to stop at the symptom.</p>
+ <div class="links"><a href="mailto:rafligunawan20@gmail.com">Email</a><a href="https://id.linkedin.com/in/m-rafli-gunawan-603a8521a">LinkedIn</a></div>
+</div>
+</header>
+
+<main class="wrap">
+<section>
+ <div class="sh r"><i>01</i><h2>Built at work</h2></div>
+ <div class="r row"><span class="n">2025</span><div><h3>An AI support assistant on WhatsApp</h3><p>Staff ask in a chat group and get answers from a managed knowledge base. Each group sees only the topics it needs, and confidential files require a password.</p></div></div>
+ <div class="r row"><span class="n">2025</span><div><h3>A task queue from chat to desktop automation</h3><p>A request in chat becomes a queued job that a script runs, then confirms back to the requester. It replaced manual admin work for lockouts and user changes.</p></div></div>
+ <div class="r row"><span class="n">2025</span><div><h3>A label reader for physical collateral</h3><p>Reads serial numbers and QR codes from a webcam and verifies them. People switched to it from the official option.</p></div></div>
+ <div class="r row"><span class="n">2025</span><div><h3>Bulk processing for registration forms</h3><p>Cleans, matches and validates form data, flags duplicates and exports straight to Excel.</p></div></div>
+ <div class="r row"><span class="n">2026</span><div><h3>Faster loan document handling</h3><p>A Six Sigma project on getting loan documents to the right unit on time, entered in an internal excellence competition.</p></div></div>
+</section>
+
+<section>
+ <div class="sh r"><i>02</i><h2>Research</h2></div>
+ <div class="feat r">
+  <div><span class="mono tagp">Ongoing</span><div class="yr">2026</div><h3>AI Appraisal</h3></div>
+  <div>
+   <p>Research on using AI to support appraisal of any collateral valued by land and building area, from KPR home mortgages to other property-backed loans. The aim is a fast, consistent first estimate of value that a human appraiser can review and adjust, rather than a replacement for one.</p>
+   <dl>
+    <dt class="mono">Scope</dt><dd>Any collateral priced by land and building area, including KPR</dd>
+    <dt class="mono">Inputs in scope</dt><dd>Land and building area, location, comparable sales, property photos</dd>
+    <dt class="mono">Goal</dt><dd>Shorter turnaround and more consistent valuations, with a person in the loop</dd>
+   </dl>
+  </div>
+ </div>
+ <div class="plates r">
+  <div class="plate"><div class="yr">2025</div><h3>Organ segmentation in chest CT</h3><p>My thesis. A neural network that outlines organs, with a mathematical penalty for shapes that break anatomy, like an organ split into pieces.</p></div>
+  <div class="plate"><div class="yr">2024</div><h3>Field boundaries from satellite images</h3><p>A segmentation model for farmland in North Togo, built as a Solafune apprentice, with a web viewer for the results.</p></div>
+ </div>
+</section>
+
+<section>
+ <div class="sh r"><i>03</i><h2>Background</h2></div>
+ <div class="bg r">
+  <div class="mono">2021–2025</div><div><b>B.Sc. Physics</b> <span>· Universitas Indonesia</span></div>
+  <div class="mono">2024</div><div><b>Bangkit machine learning</b> <span>· Google-led, plus AWS re/Start</span></div>
+  <div class="mono">2024</div><div><b>Semifinalist</b> <span>· LOGIKA UI national paper competition</span></div>
+  <div class="mono">2023–2024</div><div><b>Vice President, Fact Checker UI</b> <span>· led a student team on claim checking and media literacy</span></div>
+ </div>
+</section>
+</main>
+
+<footer class="wrap">
+ <div class="mono r">Get in touch</div>
+ <a class="big r" href="mailto:rafligunawan20@gmail.com">rafligunawan20<br>@gmail.com <span>↗</span></a>
+ <div class="mono r">Depok, Indonesia</div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(rm){var s=document.querySelector('.orbit');if(s&&s.pauseAnimations)s.pauseAnimations()}
+var cv=document.getElementById('stars'),cx=cv.getContext('2d'),st=[];
+function sz(){cv.width=innerWidth;cv.height=innerHeight;st=[];for(var i=0;i<Math.round(innerWidth*innerHeight/6500);i++)st.push({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.3+.2,p:Math.random()*6.28,v:Math.random()*.02+.004,h:Math.random()<.25?'180,160,255':'200,230,255'})}
+function draw(){cx.clearRect(0,0,cv.width,cv.height);st.forEach(function(o){o.p+=o.v;var a=.35+.65*Math.abs(Math.sin(o.p));cx.fillStyle='rgba('+o.h+','+a.toFixed(2)+')';cx.beginPath();cx.arc(o.x,o.y,o.r,0,6.28);cx.fill()});if(!rm)requestAnimationFrame(draw)}
+sz();draw();addEventListener('resize',function(){sz();if(rm)draw()});
+var els=document.querySelectorAll('.r');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(a){a.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}
+else{els.forEach(function(e){e.classList.add('in')})}
+</script>
+</body>
+</html>
